@@ -37,4 +37,7 @@ sysinfo.txt
 *.unitypackage
 
 # Logs
-Logs/
+gamejam2022/Logs/
+
+# vs config
+gamejam2022/.vsconfig
