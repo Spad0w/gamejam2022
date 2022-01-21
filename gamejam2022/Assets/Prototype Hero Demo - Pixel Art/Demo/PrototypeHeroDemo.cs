@@ -56,10 +56,10 @@ public class PrototypeHeroDemo : MonoBehaviour {
         float inputX = 0.0f;
 
         if (m_disableMovementTimer < 0.0f)
-            inputX = Input.GetAxis("Horizontal2");
+            inputX = Input.GetAxis("Horizontal");
 
         // GetAxisRaw returns either -1, 0 or 1
-        float inputRaw = Input.GetAxisRaw("Horizontal2");
+        float inputRaw = Input.GetAxisRaw("Horizontal");
         // Check if current move input is larger than 0 and the move direction is equal to the characters facing direction
         if (Mathf.Abs(inputRaw) > Mathf.Epsilon && Mathf.Sign(inputRaw) == m_facingDirection)
             m_moving = true;
@@ -94,7 +94,7 @@ public class PrototypeHeroDemo : MonoBehaviour {
 
         // -- Handle Animations --
         //Jump
-        if (Input.GetKeyDown(KeyCode.W) && m_grounded && m_disableMovementTimer < 0.0f)
+        if (Input.GetButtonDown("Jump") && m_grounded && m_disableMovementTimer < 0.0f)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
