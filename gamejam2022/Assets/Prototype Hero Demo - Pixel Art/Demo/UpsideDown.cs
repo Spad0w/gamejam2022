@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class PrototypeHeroDemo : MonoBehaviour {
+public class UpsideDown : MonoBehaviour {
 
     [Header("Variables")]
     [SerializeField] float      m_maxSpeed = 4.5f;
@@ -56,10 +56,10 @@ public class PrototypeHeroDemo : MonoBehaviour {
         float inputX = 0.0f;
 
         if (m_disableMovementTimer < 0.0f)
-            inputX = Input.GetAxis("Horizontal2");
+            inputX = Input.GetAxis("Horizontal");
 
         // GetAxisRaw returns either -1, 0 or 1
-        float inputRaw = Input.GetAxisRaw("Horizontal2");
+        float inputRaw = Input.GetAxisRaw("Horizontal");
         // Check if current move input is larger than 0 and the move direction is equal to the characters facing direction
         if (Mathf.Abs(inputRaw) > Mathf.Epsilon && Mathf.Sign(inputRaw) == m_facingDirection)
             m_moving = true;
@@ -94,12 +94,12 @@ public class PrototypeHeroDemo : MonoBehaviour {
 
         // -- Handle Animations --
         //Jump
-        if (Input.GetKeyDown(KeyCode.W) && m_grounded && m_disableMovementTimer < 0.0f)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && m_grounded && m_disableMovementTimer < 0.0f)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
+            m_body2d.velocity = new Vector2(m_body2d.velocity.x, -m_jumpForce);
             m_groundSensor.Disable(0.2f);
         }
 
