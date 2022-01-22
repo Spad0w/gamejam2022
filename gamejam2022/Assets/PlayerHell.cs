@@ -8,7 +8,6 @@ public class PlayerHell : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     public int disthell;
-
     public HealthBar healthBar;
 
     // Start is called before the first frame update

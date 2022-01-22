@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distheaven = transform.position.y;
+        distheaven = Vector2.Distance(Heaven,Hell);
         Debug.Log(distheaven);
         if (distheaven > 0)
         {
