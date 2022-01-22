@@ -38,6 +38,8 @@ sysinfo.txt
 
 # Logs
 gamejam2022/Logs/
+*.log
 
 # vs config
 gamejam2022/.vsconfig
+*.log
