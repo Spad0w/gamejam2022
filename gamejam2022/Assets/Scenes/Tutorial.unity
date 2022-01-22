@@ -1756,7 +1756,7 @@ RectTransform:
   m_GameObject: {fileID: 1329905042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 614339770}
@@ -1767,7 +1767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -542.27, y: -243.29}
+  m_AnchoredPosition: {x: 350.9, y: 213.9}
   m_SizeDelta: {x: 3.9964, y: 0.5251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329905044
@@ -1833,7 +1833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0071f5d1b3361a4dab354143725a00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1329905044}
 --- !u!1 &1352466932
 GameObject:
   m_ObjectHideFlags: 0

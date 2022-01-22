@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHeaven : MonoBehaviour
+public class PlayerHell : MonoBehaviour
 {
 
     public int maxHealth = 10;
     public int currentHealth;
-    int distheaven;
-    int disthell;
+    public int disthell;
 
     public HealthBar healthBar;
 

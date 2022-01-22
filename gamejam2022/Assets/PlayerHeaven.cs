@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHeaven : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     public int maxHealth = 10;
     public int currentHealth;
-    int distheaven;
-    int disthell;
+    public float distheaven;
 
     public HealthBar healthBar;
 
@@ -22,7 +21,8 @@ public class PlayerHeaven : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        distheaven = getY();
+        if (distheaven > -1)
         {
             TakeDamage(1);
         }
@@ -32,5 +32,11 @@ public class PlayerHeaven : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    float getY()
+    {
+        transform.position = new Vector3(0, 0, 0);
+        return (transform.position.y);
     }
 }
