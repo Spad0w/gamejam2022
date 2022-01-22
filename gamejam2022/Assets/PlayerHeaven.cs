@@ -14,15 +14,18 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("lol");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        distheaven = getY();
-        if (distheaven > -1)
+        distheaven = transform.position.y;
+        Debug.Log(distheaven);
+        if (distheaven > 0)
         {
             TakeDamage(1);
         }
@@ -34,9 +37,4 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    float getY()
-    {
-        transform.position = new Vector3(0, 0, 0);
-        return (transform.position.y);
-    }
 }
