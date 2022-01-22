@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class CollisionChecker : MonoBehaviour
 {
+    public AudioSource noise;
+    
+    void Start()
+    {
+        noise = GetComponent<AudioSource>();
+    }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
+            noise.Play();
+            Debug.Log("Sound Effect Played");
             Debug.Log("Hit Detected, Restarting Level");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
 
         }
     }
