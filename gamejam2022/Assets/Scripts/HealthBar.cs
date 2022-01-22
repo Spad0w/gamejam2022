@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KarmaBar : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
 
+    public Slider slider;
 
     public void SetMaxHealth(int health)
     {

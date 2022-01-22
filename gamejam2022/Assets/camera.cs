@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerKarma : MonoBehaviour
+public class camera : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,8 @@ public class PlayerKarma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float moverCamX = 0.001F;
+        Camera.main.transform.Translate(moverCamX, 0, 0);
         
     }
 }
