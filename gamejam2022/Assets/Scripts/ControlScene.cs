@@ -17,7 +17,7 @@ public class ControlScene : MonoBehaviour
         //if any key is pressed jump to gameplay
         if(Input.anyKeyDown)
         {
-            SceneManager.LoadScene("samplescene");
+            SceneManager.LoadScene("Stage 1");
         }
     }
 }
