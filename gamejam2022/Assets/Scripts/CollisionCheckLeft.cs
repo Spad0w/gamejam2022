@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class CollisionChecker : MonoBehaviour
+public class CollisionCheckLeft : MonoBehaviour
 {
     public AudioSource noise;
     
@@ -30,11 +30,9 @@ public class CollisionChecker : MonoBehaviour
         var hellposition = GameObject.Find("Hell").transform.position;
         var heavenposition = GameObject.Find("Heaven").transform.position;
         float distance = Vector2.Distance(hellposition, heavenposition);
-        Debug.Log(distance);
-        if(distance > 3.9f)
+        if(distance > 4.1f)
         {
             GameObject.Find("Heaven").GetComponent<PlayerHeaven>().TakeDamage(1);
-            Debug.Log("Damage Taken by Heaven");
         }
         if (GameObject.Find("Heaven").GetComponent<PlayerHeaven>().currentHealth < 0)
         {

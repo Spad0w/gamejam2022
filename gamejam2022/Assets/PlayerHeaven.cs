@@ -33,7 +33,7 @@ public class PlayerHeaven: MonoBehaviour
         hellposition = GameObject.Find("Hell").transform.position;
         heavenposition = transform.position;
         distbetween = Vector2.Distance(hellposition, heavenposition);
-        if (distbetween > 3.9f)
+        if (distbetween > 4.1f)
         {
            TakeDamage(1);
         }
