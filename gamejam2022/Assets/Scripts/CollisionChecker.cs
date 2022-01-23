@@ -22,8 +22,6 @@ public class CollisionChecker : MonoBehaviour
             Debug.Log("Sound Effect Played");
             Debug.Log("Hit Detected, Restarting Level");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
-
         }
     }
 
@@ -31,14 +29,16 @@ public class CollisionChecker : MonoBehaviour
     {
         var hellposition = GameObject.Find("Hell").transform.position;
         var heavenposition = GameObject.Find("Heaven").transform.position;
-        //Debug.Log(hellposition);
-        //Debug.Log(heavenposition);
         float distance = Vector2.Distance(hellposition, heavenposition);
         Debug.Log(distance);
-        if(distance > 4.0f)
+        if(distance > 3.9f)
         {
-            GameObject.Find("Heaven").GetComponent<PlayerHeaven>().currentHealth -= 1;
+            GameObject.Find("Heaven").GetComponent<PlayerHeaven>().TakeDamage(1);
             Debug.Log("Damage Taken by Heaven");
+        }
+        if (GameObject.Find("Heaven").GetComponent<PlayerHeaven>().currentHealth < 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }

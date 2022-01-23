@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerHeaven: MonoBehaviour
 {
-    public int maxHealth = 10;
+    public int maxHealth = 100;
     public int currentHealth;
-    public float distheaven;
+    public float distbetween;
     Vector2 hellposition = new Vector2(0.0f,0.0f);
     Vector2 heavenposition = new Vector2(0.0f, 0.0f);
     public HealthBar healthBar;
@@ -21,30 +21,21 @@ public class Player : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("lol");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        Debug.Log("Getting Position of Hell Player");
-        hellposition = GameObject.Find("Hell").transform.position;
-        Debug.Log("Getting Position of Heaven Player");
-        heavenposition = transform.position;
-        Debug.Log("Hell " + hellposition);
-        Debug.Log("Heaven " + heavenposition);
+        //hellposition = GameObject.Find("Hell").transform.position;
+        //heavenposition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         hellposition = GameObject.Find("Hell").transform.position;
-        Debug.Log("Hell Position: " + hellposition);
         heavenposition = transform.position;
-        Debug.Log("HeavenPosition: " + heavenposition);
-        float distheaven = Vector2.Distance(hellposition, heavenposition);
-        Debug.Log(distheaven);
-        if (distheaven > 0)
+        distbetween = Vector2.Distance(hellposition, heavenposition);
+        if (distbetween > 3.9f)
         {
-            TakeDamage(1);
-            Debug.Log("Damage Taken");
+           TakeDamage(1);
         }
     }
 }

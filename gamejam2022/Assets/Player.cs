@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHeaven : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
     public int maxHealth = 10;
