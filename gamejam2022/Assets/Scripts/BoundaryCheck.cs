@@ -13,7 +13,7 @@ public class BoundaryCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moverCamX = 0.001F;
+        float moverCamX = 0.002F;
         gameObject.transform.Translate(moverCamX,0,0);
     }
 }
