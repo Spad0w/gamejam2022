@@ -11,6 +11,7 @@ public class CollisionChecker : MonoBehaviour
     void Start()
     {
         noise = GetComponent<AudioSource>();
+        //float distance = 0.0;   
     }
     
     void OnCollisionEnter2D(Collision2D collision)
@@ -24,5 +25,21 @@ public class CollisionChecker : MonoBehaviour
             
 
         }
+    }
+
+    void Update()
+    {
+        var hellposition = GameObject.Find("Hell").transform.position;
+        var heavenposition = GameObject.Find("Heaven").transform.position;
+        //Debug.Log(hellposition);
+        //Debug.Log(heavenposition);
+        float distance = Vector2.Distance(hellposition, heavenposition);
+        Debug.Log(distance);
+        if(distance > 4.0f)
+        {
+            GameObject.Find("Heaven").TakeDamage(1);
+            Debug.Log("Damage Taken by Heaven");
+        }
+        
     }
 }

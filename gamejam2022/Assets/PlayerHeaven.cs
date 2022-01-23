@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     public float distheaven;
-    //public float hellposition;
-    //public float heavenposition;
+    Vector2 hellposition = new Vector2(0.0f,0.0f);
+    Vector2 heavenposition = new Vector2(0.0f, 0.0f);
     public HealthBar healthBar;
 
     // Start is called before the first frame update
@@ -18,17 +18,22 @@ public class Player : MonoBehaviour
         Debug.Log("lol");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
+        Debug.Log("Getting Position of Hell Player");
+        hellposition = GameObject.Find("Hell").transform.position;
+        Debug.Log("Getting Position of Heaven Player");
+        heavenposition = transform.position;
+        Debug.Log("Hell " + hellposition);
+        Debug.Log("Heaven " + heavenposition);
     }
 
     // Update is called once per frame
     void Update()
     {
-        var hellposition = GameObject.Find("Hell").transform.position;
-        Debug.Log(hellposition);
-        var heavenposition = transform.position;
-        Debug.Log(heavenposition);
-        distheaven = Vector2.Distance(hellposition, heavenposition);
+        hellposition = GameObject.Find("Hell").transform.position;
+        Debug.Log("Hell Position: " + hellposition);
+        heavenposition = transform.position;
+        Debug.Log("HeavenPosition: " + heavenposition);
+        float distheaven = Vector2.Distance(hellposition, heavenposition);
         Debug.Log(distheaven);
         if (distheaven > 0)
         {
@@ -37,7 +42,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
