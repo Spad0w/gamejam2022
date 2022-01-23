@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public int maxHealth = 10;
     public int currentHealth;
     public float distheaven;
     Vector2 hellposition = new Vector2(0.0f,0.0f);
     Vector2 heavenposition = new Vector2(0.0f, 0.0f);
     public HealthBar healthBar;
+    public int damage;
 
     // Start is called before the first frame update
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+    
     void Start()
     {
         Debug.Log("lol");
@@ -41,11 +47,4 @@ public class Player : MonoBehaviour
             Debug.Log("Damage Taken");
         }
     }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-    }
-
 }

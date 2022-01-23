@@ -37,7 +37,7 @@ public class CollisionChecker : MonoBehaviour
         Debug.Log(distance);
         if(distance > 4.0f)
         {
-            GameObject.Find("Heaven").TakeDamage(1);
+            GameObject.Find("Heaven").GetComponent<PlayerHeaven>().currentHealth -= 1;
             Debug.Log("Damage Taken by Heaven");
         }
         
