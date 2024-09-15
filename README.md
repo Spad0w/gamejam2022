@@ -1,4 +1,4 @@
-# Game Jam 2022 Submission - Karma
+# Global Game Jam 2022 Submission - Karma
 
 ## Team Members (Alphabetical Order)
 1. Chaitanya Jadhav
